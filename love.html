@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     background: radial-gradient(circle, #250014, #050005 75%);
     display: flex;
@@ -28,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
 }
 
 .heart-group {
@@ -100,6 +101,36 @@ body {
     text-shadow: 0 0 15px #ff0757;
 }
 
+#musicButton {
+    position: absolute;
+    top: calc(50% + 205px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 13px 24px;
+    border: 1px solid #ff4d88;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #68002f, #250014);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow:
+        0 0 12px #ff0757,
+        0 0 25px rgba(255, 7, 87, 0.4);
+    white-space: nowrap;
+    z-index: 5;
+    transition: 0.3s;
+}
+
+#musicButton:hover {
+    background: #ff0757;
+    box-shadow: 0 0 25px #ff0757;
+}
+
+#musicButton:active {
+    transform: translateX(-50%) scale(0.96);
+}
+
 .love {
     position: fixed;
     bottom: -30px;
@@ -107,6 +138,7 @@ body {
     pointer-events: none;
     animation: floatUp linear forwards;
     text-shadow: 0 0 12px #ff0757;
+    z-index: 1;
 }
 
 @keyframes heartbeat {
@@ -146,18 +178,57 @@ body {
         opacity: 0;
     }
 }
+
+@media (max-height: 600px) {
+    .heart-group {
+        transform: scale(0.75);
+    }
+
+    .message {
+        top: calc(50% + 115px);
+    }
+
+    #musicButton {
+        top: calc(50% + 155px);
+    }
+}
 </style>
 </head>
 
 <body>
 
 <div class="scene">
+
     <div class="heart-group">
         <div class="heart"></div>
         <div class="name">Kanoza</div>
     </div>
 
     <div class="message">I LOVE YOU ❤️</div>
+
+    <button id="musicButton" type="button">
+        🎵 Play Our Song ❤️
+    </button>
+
+    <!-- YouTube music player -->
+    <iframe
+        id="youtubePlayer"
+        width="200"
+        height="100"
+        src=""
+        title="Our Love Song"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+        style="
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0.01;
+            pointer-events: none;
+            border: 0;
+        "
+    ></iframe>
+
 </div>
 
 <script>
@@ -177,7 +248,36 @@ function createLove() {
 }
 
 setInterval(createLove, 350);
+
+
+// Music button
+const musicButton = document.getElementById("musicButton");
+const youtubePlayer = document.getElementById("youtubePlayer");
+
+let musicPlaying = false;
+
+musicButton.addEventListener("click", function () {
+
+    if (!musicPlaying) {
+
+        youtubePlayer.src =
+            "https://www.youtube.com/embed/naUqWQ-of6o?autoplay=1";
+
+        musicButton.textContent = "⏹ Stop Our Song 💗";
+        musicPlaying = true;
+
+    } else {
+
+        youtubePlayer.src = "";
+
+        musicButton.textContent = "🎵 Play Our Song ❤️";
+        musicPlaying = false;
+
+    }
+
+});
 </script>
 
 </body>
 </html>
+```
