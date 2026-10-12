@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doctor Bosy 🩺💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #fff0f5, #ffc1d6, #ffe4ec);
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.medical-icon {
+  font-size: 85px;
+  animation: pulse 1.5s infinite;
+  filter: drop-shadow(0 5px 12px #ff8fab);
+}
+
+h1 {
+  font-size: clamp(38px, 10vw, 58px);
+  color: #d63384;
+  margin: 15px 0;
+  text-shadow: 0 3px 12px #ffffff;
+  animation: appear 2s ease-in-out;
+}
+
+.subtitle {
+  font-size: 21px;
+  color: #a4135c;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #ff8fab;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(214, 51, 132, 0.2);
+}
+
+.message {
+  font-size: 19px;
+  line-height: 1.9;
+  color: #8e245b;
+  margin: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="medical-icon">🩺💗</div>
+
+  <h1>Doctor Bosy</h1>
+
+  <div class="subtitle">
+    The Sweetest Doctor in the World 🌸
+  </div>
+
+  <div class="card">
+    <p class="message" dir="rtl">
+      لأجمل دكتورة وأحلى أخت في الدنيا 💖<br>
+      ربنا يوفقك ويحققلك كل أحلامك 🩺<br>
+      وتفضلي دايمًا مصدر فخر وسعادة لينا 🌷<br>
+      بحبك يا أحلى دكتورة في الدنيا ❤️
+    </p>
+  </div>
+
+</div>
+
+<script>
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.textContent = ["💗", "💕", "💖", "🌸", "❤️"][
+    Math.floor(Math.random() * 5)
+  ];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
