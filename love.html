@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For My Love ❤️</title>
+  <title>For My Kanoza ❤️</title>
 
   <style>
     * {
@@ -15,35 +15,37 @@
 
     body {
       min-height: 100vh;
+      overflow-x: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      overflow-x: hidden;
-      background: linear-gradient(135deg, #180016, #57002d, #16001f);
-      color: white;
-      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      color: white;
+      padding: 25px 15px;
+      background: radial-gradient(circle at top, #65002f, #250018 55%, #08000d);
     }
 
-    .heart-container {
+    .container {
+      width: 100%;
+      max-width: 450px;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      z-index: 2;
+    }
+
+    .heart-box {
+      position: relative;
+      display: inline-block;
       animation: heartbeat 1.2s infinite;
-      margin-bottom: 25px;
+      margin: 15px 0 25px;
     }
 
     .heart {
-      color: #ff174f;
-      font-size: clamp(130px, 35vw, 220px);
+      font-size: clamp(150px, 42vw, 220px);
       line-height: 1.2;
-      text-shadow:
-        0 0 15px #ff174f,
-        0 0 35px #ff174f,
-        0 0 65px #ff006a;
+      filter: drop-shadow(0 0 15px #ff174f)
+              drop-shadow(0 0 35px #ff174f);
     }
 
     .name {
@@ -51,72 +53,88 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 100%;
-      color: white;
-      font-size: clamp(24px, 7vw, 38px);
+      font-size: clamp(26px, 7vw, 38px);
       font-weight: bold;
-      text-shadow: 0 0 10px #ff8bb3, 0 0 20px #ff174f;
       white-space: nowrap;
+      text-shadow: 0 0 10px #fff, 0 0 25px #ff174f;
     }
 
     h1 {
-      color: #ffb5d0;
-      font-size: clamp(24px, 6vw, 38px);
-      margin-bottom: 12px;
+      font-size: clamp(27px, 7vw, 38px);
+      color: #ffb3cf;
       text-shadow: 0 0 15px #ff174f;
+      margin-bottom: 12px;
     }
 
-    p {
-      font-size: 18px;
+    .message {
+      color: #ffe1ec;
+      font-size: 16px;
+      line-height: 1.8;
       margin-bottom: 25px;
     }
 
-    button {
-      background: #ff174f;
-      color: white;
+    .music-card {
+      width: 100%;
+      padding: 20px;
+      border: 1px solid rgba(255, 150, 190, 0.35);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(255, 23, 79, 0.15);
+    }
+
+    .music-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .music-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .music-subtitle {
+      font-size: 13px;
+      color: #ffc3d8;
+      margin-bottom: 18px;
+    }
+
+    .music-button {
       border: none;
-      padding: 14px 24px;
       border-radius: 30px;
+      padding: 13px 25px;
+      color: white;
+      background: linear-gradient(135deg, #ff174f, #ff4f91);
+      box-shadow: 0 0 20px rgba(255, 23, 79, 0.4);
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 0 20px #ff174f;
-      transition: 0.3s;
-      margin-bottom: 20px;
+      transition: transform 0.2s;
     }
 
-    button:hover {
-      transform: scale(1.05);
-      background: #ff4081;
+    .music-button:active {
+      transform: scale(0.96);
     }
 
-    #music-player {
-      display: none;
-      width: min(100%, 400px);
-      margin-top: 10px;
-    }
-
-    #music-player iframe {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      border-radius: 12px;
+    .status {
+      font-size: 12px;
+      color: #ffd6e5;
+      margin-top: 13px;
+      min-height: 18px;
     }
 
     .floating-heart {
       position: fixed;
       bottom: -40px;
-      color: #ff4f87;
-      font-size: 22px;
       pointer-events: none;
+      z-index: 1;
       animation: floatUp linear forwards;
-      z-index: -1;
     }
 
     @keyframes heartbeat {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
+      50% { transform: scale(1.07); }
     }
 
     @keyframes floatUp {
@@ -135,60 +153,98 @@
 
 <body>
 
-  <div class="heart-container">
-    <div class="heart">❤️</div>
-    <div class="name">Kanoza</div>
-  </div>
+  <main class="container">
 
-  <h1>I LOVE YOU ❤️</h1>
-  <p>You are my favorite person in the world 💖</p>
+```
+<div class="heart-box">
+  <div class="heart">❤️</div>
+  <div class="name">Kanoza</div>
+</div>
 
-  <button id="music-button" onclick="playSong()">
-    Play Our Song 🎵❤️
+<h1>I LOVE YOU ❤️</h1>
+
+<p class="message">
+  You are my favorite person in the world. 💖<br>
+  Every beat of my heart is for you.
+</p>
+
+<section class="music-card">
+  <div class="music-icon">🎵💗</div>
+  <div class="music-title">Our Special Song</div>
+  <div class="music-subtitle">A little song, just for you ❤️</div>
+
+  <button
+    type="button"
+    class="music-button"
+    id="musicButton"
+    onclick="toggleMusic()">
+    ▶ Play Our Song
   </button>
 
-  <div id="music-player">
-    <iframe
-      id="youtube-player"
-      title="Our Song"
-      src=""
-      allow="autoplay; encrypted-media; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <p class="status" id="musicStatus">
+    Made with love ❤️
+  </p>
+</section>
+
+<audio id="ourSong" preload="auto" loop>
+  <source src="./song.mp3" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+```
+
+  </main>
 
   <script>
-    function playSong() {
-      const player = document.getElementById("music-player");
-      const iframe = document.getElementById("youtube-player");
-      const button = document.getElementById("music-button");
+    const song = document.getElementById("ourSong");
+    const button = document.getElementById("musicButton");
+    const statusText = document.getElementById("musicStatus");
 
-      player.style.display = "block";
+    async function toggleMusic() {
+      if (song.paused) {
+        statusText.textContent = "Loading your song... 🎵";
 
-      iframe.src =
-        "https://www.youtube.com/embed/naUqWQ-of6o?autoplay=1&playsinline=1";
+        try {
+          await song.play();
 
-      button.textContent = "Our Song Is Ready ❤️🎵";
+          button.textContent = "❚❚ Pause Song";
+          statusText.textContent = "Playing our song with love ❤️";
+        } catch (error) {
+          button.textContent = "▶ Try Again";
+          statusText.textContent =
+            "Couldn't play the song. Check the MP3 file name.";
+        }
+      } else {
+        song.pause();
+        button.textContent = "▶ Play Our Song";
+        statusText.textContent = "Paused ❤️";
+      }
     }
 
-    // Floating hearts
-    function createHeart() {
+    song.addEventListener("ended", () => {
+      button.textContent = "▶ Play Our Song";
+      statusText.textContent = "Song finished ❤️";
+    });
+
+    song.addEventListener("error", () => {
+      statusText.textContent =
+        "Audio file not found. Check the file name on GitHub.";
+    });
+
+    function createFloatingHeart() {
       const heart = document.createElement("div");
       heart.className = "floating-heart";
       heart.textContent = Math.random() > 0.5 ? "❤️" : "💕";
 
       heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (15 + Math.random() * 25) + "px";
-      heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+      heart.style.fontSize = (14 + Math.random() * 22) + "px";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
 
       document.body.appendChild(heart);
 
-      setTimeout(() => {
-        heart.remove();
-      }, 9000);
+      setTimeout(() => heart.remove(), 10000);
     }
 
-    setInterval(createHeart, 500);
+    setInterval(createFloatingHeart, 600);
   </script>
 
 </body>
