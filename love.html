@@ -1,191 +1,190 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Kanoza ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kanoza ❤️</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      background: linear-gradient(135deg, #1a0010, #4a001f, #16000d);
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0010, #4a001f, #16000d);
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 
-    .container {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .heart {
-      position: relative;
-      font-size: clamp(150px, 42vw, 220px);
-      line-height: 1.2;
-      filter: none;
-      animation: heartbeat 1.2s infinite;
-    }
+.heart {
+  position: relative;
+  font-size: clamp(150px, 42vw, 220px);
+  line-height: 1.2;
+  filter: none;
+  animation: heartbeat 1.2s infinite;
+}
 
-    .name {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      color: white;
-      font-size: clamp(24px, 7vw, 38px);
-      font-weight: bold;
-      text-shadow: 0 0 10px #ff174f;
-      white-space: nowrap;
-    }
+.name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  color: white;
+  font-size: clamp(24px, 7vw, 38px);
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff174f;
+  white-space: nowrap;
+}
 
-    h1 {
-      margin: 15px 0 10px;
-      color: #ff8fab;
-      font-size: clamp(25px, 7vw, 36px);
-      text-shadow: 0 0 12px #ff174f;
-    }
+h1 {
+  margin: 15px 0 10px;
+  color: #ff8fab;
+  font-size: clamp(25px, 7vw, 36px);
+  text-shadow: 0 0 12px #ff174f;
+}
 
-    .message {
-      margin: 10px 0 20px;
-      font-size: clamp(17px, 4.5vw, 22px);
-      color: #fff;
-      line-height: 1.6;
-    }
+.message {
+  margin: 10px 0 20px;
+  font-size: clamp(17px, 4.5vw, 22px);
+  color: white;
+  line-height: 1.6;
+}
 
-    button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      background: #ff174f;
-      color: white;
-      font-size: 17px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 15px #ff174f;
-    }
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #ff174f;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff174f;
+}
 
-    button:active {
-      transform: scale(0.96);
-    }
+button:active {
+  transform: scale(0.96);
+}
 
-    .floating-heart {
-      position: absolute;
-      bottom: -40px;
-      color: #ff4d79;
-      opacity: 0.7;
-      animation: floatUp linear infinite;
-      z-index: 1;
-      pointer-events: none;
-    }
+.floating-heart {
+  position: absolute;
+  bottom: -40px;
+  color: #ff4d79;
+  opacity: 0.7;
+  animation: floatUp linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
 
-    @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      25% {
-        transform: scale(1.08);
-      }
-      40% {
-        transform: scale(1);
-      }
-      60% {
-        transform: scale(1.05);
-      }
-    }
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.08);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+}
 
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-      15% {
-        opacity: 0.7;
-      }
-      to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="heart">
-      ❤️
-      <div class="name">Kanoza</div>
-    </div>
+<div class="container">
 
-    <h1>I LOVE YOU ❤️</h1>
-
-    <p class="message">
-      ❤️You are my favorite person in the world❤️
-    </p>
-
-    <audio id="ourSong" loop>
-      <source src="./song.mp3" type="audio/mpeg">
-      Your browser does not support audio.
-    </audio>
-
-    <button onclick="toggleSong()" id="songButton">
-      ▶ Play Our Song 🎵
-    </button>
+  <div class="heart">
+    ❤️
+    <div class="name">Kanoza</div>
   </div>
 
-  <script>
-    function createFloatingHeart() {
-      const heart = document.createElement("div");
-      heart.className = "floating-heart";
-      heart.textContent = "♥";
+  <h1>I LOVE YOU ❤️</h1>
 
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (12 + Math.random() * 20) + "px";
-      heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+  <p class="message">❤️You are my favorite person in the world❤️</p>
 
-      document.body.appendChild(heart);
+  <audio id="ourSong" loop>
+    <source src="./song.mp3" type="audio/mpeg">
+  </audio>
 
-      setTimeout(() => {
-        heart.remove();
-      }, 11000);
-    }
+  <button onclick="toggleSong()" id="songButton">
+    ▶ Play Our Song 🎵
+  </button>
 
-    setInterval(createFloatingHeart, 400);
+</div>
 
-    const song = document.getElementById("ourSong");
-    const songButton = document.getElementById("songButton");
+<script>
+function createFloatingHeart() {
+  const heart = document.createElement("div");
+  heart.className = "floating-heart";
+  heart.textContent = "♥";
 
-    function toggleSong() {
-      if (song.paused) {
-        song.play().then(() => {
-          songButton.textContent = "⏸ Pause Our Song 🎵";
-        }).catch(() => {
-          alert("Check that song.mp3 is uploaded beside love.html.");
-        });
-      } else {
-        song.pause();
-        songButton.textContent = "▶ Play Our Song 🎵";
-      }
-    }
-  </script>
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (12 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 11000);
+}
+
+setInterval(createFloatingHeart, 400);
+
+const song = document.getElementById("ourSong");
+const songButton = document.getElementById("songButton");
+
+function toggleSong() {
+  if (song.paused) {
+    song.play().then(() => {
+      songButton.textContent = "⏸ Pause Our Song 🎵";
+    }).catch(() => {
+      alert("Check that song.mp3 is uploaded beside love.html.");
+    });
+  } else {
+    song.pause();
+    songButton.textContent = "▶ Play Our Song 🎵";
+  }
+}
+</script>
 
 </body>
 </html>
-```
