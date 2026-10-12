@@ -1,283 +1,195 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Kanoza ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love ❤️</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    overflow: hidden;
-    background: radial-gradient(circle, #250014, #050005 75%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-}
-
-.scene {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-}
-
-.heart-group {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: heartbeat 1.3s ease-in-out infinite;
-}
-
-.heart {
-    position: absolute;
-    width: 145px;
-    height: 145px;
-    background: #ff0757;
-    transform: rotate(-45deg);
-    box-shadow:
-        0 0 20px #ff0757,
-        0 0 45px #ff0757,
-        0 0 85px #ff0757;
-}
-
-.heart::before,
-.heart::after {
-    content: "";
-    position: absolute;
-    width: 145px;
-    height: 145px;
-    background: #ff0757;
-    border-radius: 50%;
-}
-
-.heart::before {
-    top: -72px;
-    left: 0;
-}
-
-.heart::after {
-    left: 72px;
-    top: 0;
-}
-
-.name {
-    position: relative;
-    z-index: 2;
-    transform: translateY(-18px);
-    color: white;
-    font-size: clamp(30px, 9vw, 43px);
-    font-weight: bold;
-    white-space: nowrap;
-    text-shadow:
-        0 0 8px white,
-        0 0 18px #ff0757,
-        0 0 35px #ff0757;
-    animation: nameGlow 1.3s ease-in-out infinite;
-}
-
-.message {
-    position: absolute;
-    top: calc(50% + 155px);
-    left: 50%;
-    transform: translateX(-50%);
-    color: #ff9cbd;
-    font-size: 18px;
-    white-space: nowrap;
-    letter-spacing: 3px;
-    text-shadow: 0 0 15px #ff0757;
-}
-
-#musicButton {
-    position: absolute;
-    top: calc(50% + 205px);
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 13px 24px;
-    border: 1px solid #ff4d88;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #68002f, #250014);
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow:
-        0 0 12px #ff0757,
-        0 0 25px rgba(255, 7, 87, 0.4);
-    white-space: nowrap;
-    z-index: 5;
-    transition: 0.3s;
-}
-
-#musicButton:hover {
-    background: #ff0757;
-    box-shadow: 0 0 25px #ff0757;
-}
-
-#musicButton:active {
-    transform: translateX(-50%) scale(0.96);
-}
-
-.love {
-    position: fixed;
-    bottom: -30px;
-    color: #ff4d88;
-    pointer-events: none;
-    animation: floatUp linear forwards;
-    text-shadow: 0 0 12px #ff0757;
-    z-index: 1;
-}
-
-@keyframes heartbeat {
-    0%, 100% {
-        transform: scale(0.88);
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    50% {
-        transform: scale(1.05);
-    }
-}
 
-@keyframes nameGlow {
-    0%, 100% {
-        text-shadow:
-            0 0 8px white,
-            0 0 18px #ff0757,
-            0 0 35px #ff0757;
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #180016, #57002d, #16001f);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
     }
-    50% {
-        text-shadow:
-            0 0 12px white,
-            0 0 28px #ff4d88,
-            0 0 48px #ff0757;
-    }
-}
 
-@keyframes floatUp {
-    0% {
+    .heart-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: heartbeat 1.2s infinite;
+      margin-bottom: 25px;
+    }
+
+    .heart {
+      color: #ff174f;
+      font-size: clamp(130px, 35vw, 220px);
+      line-height: 1.2;
+      text-shadow:
+        0 0 15px #ff174f,
+        0 0 35px #ff174f,
+        0 0 65px #ff006a;
+    }
+
+    .name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      color: white;
+      font-size: clamp(24px, 7vw, 38px);
+      font-weight: bold;
+      text-shadow: 0 0 10px #ff8bb3, 0 0 20px #ff174f;
+      white-space: nowrap;
+    }
+
+    h1 {
+      color: #ffb5d0;
+      font-size: clamp(24px, 6vw, 38px);
+      margin-bottom: 12px;
+      text-shadow: 0 0 15px #ff174f;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      background: #ff174f;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff174f;
+      transition: 0.3s;
+      margin-bottom: 20px;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff4081;
+    }
+
+    #music-player {
+      display: none;
+      width: min(100%, 400px);
+      margin-top: 10px;
+    }
+
+    #music-player iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -40px;
+      color: #ff4f87;
+      font-size: 22px;
+      pointer-events: none;
+      animation: floatUp linear forwards;
+      z-index: -1;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @keyframes floatUp {
+      from {
         transform: translateY(0) rotate(0deg);
-        opacity: 0;
-    }
-    15% {
         opacity: 1;
-    }
-    100% {
-        transform: translateY(-110vh) rotate(35deg);
+      }
+      to {
+        transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
+      }
     }
-}
+  </style>
 
-@media (max-height: 600px) {
-    .heart-group {
-        transform: scale(0.75);
-    }
-
-    .message {
-        top: calc(50% + 115px);
-    }
-
-    #musicButton {
-        top: calc(50% + 155px);
-    }
-}
-</style>
 </head>
 
 <body>
 
-<div class="scene">
+  <div class="heart-container">
+    <div class="heart">❤️</div>
+    <div class="name">Kanoza</div>
+  </div>
 
-    <div class="heart-group">
-        <div class="heart"></div>
-        <div class="name">Kanoza</div>
-    </div>
+  <h1>I LOVE YOU ❤️</h1>
+  <p>You are my favorite person in the world 💖</p>
 
-    <div class="message">I LOVE YOU ❤️</div>
+  <button id="music-button" onclick="playSong()">
+    Play Our Song 🎵❤️
+  </button>
 
-    <button id="musicButton" type="button">
-        🎵 Play Our Song ❤️
-    </button>
-
-    <!-- YouTube music player -->
+  <div id="music-player">
     <iframe
-        id="youtubePlayer"
-        width="200"
-        height="100"
-        src=""
-        title="Our Love Song"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        referrerpolicy="strict-origin-when-cross-origin"
-        style="
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0.01;
-            pointer-events: none;
-            border: 0;
-        "
-    ></iframe>
+      id="youtube-player"
+      title="Our Song"
+      src=""
+      allow="autoplay; encrypted-media; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-</div>
+  <script>
+    function playSong() {
+      const player = document.getElementById("music-player");
+      const iframe = document.getElementById("youtube-player");
+      const button = document.getElementById("music-button");
 
-<script>
-function createLove() {
-    const item = document.createElement("div");
+      player.style.display = "block";
 
-    item.className = "love";
-    item.textContent = Math.random() > 0.5 ? "♥" : "❤";
+      iframe.src =
+        "https://www.youtube.com/embed/naUqWQ-of6o?autoplay=1&playsinline=1";
 
-    item.style.left = Math.random() * 100 + "vw";
-    item.style.fontSize = (12 + Math.random() * 22) + "px";
-    item.style.animationDuration = (4 + Math.random() * 4) + "s";
-
-    document.body.appendChild(item);
-
-    setTimeout(() => item.remove(), 8500);
-}
-
-setInterval(createLove, 350);
-
-
-// Music button
-const musicButton = document.getElementById("musicButton");
-const youtubePlayer = document.getElementById("youtubePlayer");
-
-let musicPlaying = false;
-
-musicButton.addEventListener("click", function () {
-
-    if (!musicPlaying) {
-
-        youtubePlayer.src =
-            "https://www.youtube.com/embed/naUqWQ-of6o?autoplay=1";
-
-        musicButton.textContent = "⏹ Stop Our Song 💗";
-        musicPlaying = true;
-
-    } else {
-
-        youtubePlayer.src = "";
-
-        musicButton.textContent = "🎵 Play Our Song ❤️";
-        musicPlaying = false;
-
+      button.textContent = "Our Song Is Ready ❤️🎵";
     }
 
-});
-</script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.textContent = Math.random() > 0.5 ? "❤️" : "💕";
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 25) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 9000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
 
 </body>
 </html>
-```
